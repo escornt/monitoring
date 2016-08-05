@@ -42,12 +42,12 @@ int               start_parsing(struct dirent *dit, char *path)
   if ((fullpath = concat(path, dit->d_name)) == NULL)
     return (1);
   if ((fd = fopen(fullpath, "r")) == NULL)
-  {
-    free(fullpath);
-    return (1);
-  }
+    {
+      free(fullpath);
+      return (1);
+    }
   getline(&line, 0, fd);
-  handle_line(line);
+  handle_line(line, dit->d_name);
   free(fullpath);
   fclose(fd);
   return (0);
@@ -63,8 +63,6 @@ int               main()
   if (dir = opendir(path) == NULL)
     return (1);
   while ((dit = readdir(dir)) != NULL)
-  {
     start_parsing(dit, path);
-  }
   return (0);
 }
