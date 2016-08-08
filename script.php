@@ -17,6 +17,7 @@ function handle_file($path, $id) {
   if (file_exists($path)) {
     $handle = fopen($path, "r");
     $line = fgets($handle, 255);
+    fclose($handle);
     if (strcmp($line, "d") == 0) {
       return;
     } else if (strcmp($line, "e\n") == 0) {
@@ -38,7 +39,6 @@ function handle_file($path, $id) {
       echo "Current time = ".$curtime."\n";
       echo "State = ".$state."\n";
     }
-    fclose($handle);
   }
 }
 
