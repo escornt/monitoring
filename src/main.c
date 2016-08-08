@@ -64,7 +64,7 @@ int               main()
     return (1);
   while ((dit = readdir(dir)) != NULL)
   {
-    printf("%s\n", dir->d_name);
+    printf("%s\n", dit->d_name);
   }
   //  start_parsing(dit, path);
   return (0);
