@@ -16,7 +16,7 @@ if ($dir = opendir($path))
 function handle_file($path, $id) {
   if (file_exists($path)) {
     $handle = fopen($path, "r");
-    $line = fgets($handle, EOF);
+    $line = fgets($handle, 255);
     if ($line == "d") {
       return;
     } else if ($line == "e") {
