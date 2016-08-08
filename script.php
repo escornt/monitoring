@@ -31,6 +31,7 @@ function handle_file($path, $id) {
       $state = substr(substr($state,strrpos(trim($state),' ')), 1);
       echo "vm ".$id."\n";
       echo "cttime = ".$cttime."\n";
+      echo "current time = ".$curtime."\n";
       echo $state."\n";
     }
     fclose($handle);
