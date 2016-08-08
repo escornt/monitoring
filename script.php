@@ -17,7 +17,6 @@ function handle_file($path, $id) {
   if (file_exists($path)) {
     $handle = fopen($path, "r+");
     $line = fgets($handle, 255);
-    fclose($handle);
     if (strcmp($line, "d\n") == 0) {
       fclose($handle);
       return;
