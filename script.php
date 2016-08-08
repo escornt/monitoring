@@ -28,7 +28,7 @@ function handle_file($path, $id) {
       $curtime = time();
       exec("vzctl status ".$id, $output);
       $state = $output[0];
-      $state = substr($state,strrpos(trim($state),' '));
+      $state = substr(substr($state,strrpos(trim($state),' ')), 1);
       echo "vm ".$id."\n";
       echo "cttime = ".$cttime."\n";
       echo $state."\n";
