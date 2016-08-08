@@ -33,7 +33,7 @@ char              *concat(char *s1, char *s2)
   return (res);
 }
 
-int               start_parsing(struct dirent *dit, char *path)
+/*int               start_parsing(struct dirent *dit, char *path)
 {
   FILE            *fd;
   char            *fullpath;
@@ -51,7 +51,7 @@ int               start_parsing(struct dirent *dit, char *path)
   free(fullpath);
   fclose(fd);
   return (0);
-}
+}*/
 
 int               main()
 {
