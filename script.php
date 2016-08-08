@@ -22,8 +22,10 @@ function handle_file($path, $id) {
       return;
     } else if ($line == "e") {
       exec("vzctl stop ".$id);
+      return;
     } else if ($line == "x") {
       exec("vzctl destroy ".$id);
+      return;
     } else {
       $cttime = intval(strval($line));
       $curtime = time();
