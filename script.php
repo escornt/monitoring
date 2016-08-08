@@ -17,7 +17,7 @@ function handle_file($path, $id) {
   if (file_exists($path)) {
     $handle = fopen($path, "r");
     $line = fgets($handle, 255);
-    echo "*".$line."\n";
+    //echo "*".$line."\n";
     if ($line == "d") {
       return;
     } else if ($line == "e") {
