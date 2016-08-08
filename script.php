@@ -30,10 +30,10 @@ function handle_file($path, $id) {
       exec("vzctl status ".$id, $output);
       $state = $output[0];
       $state = substr(substr($state,strrpos(trim($state),' ')), 1);
-      /*echo "Ct ".$id."\n";
+      echo "Ct ".$id."\n";
       echo "Ct time = ".$cttime."\n";
       echo "Current time = ".$curtime."\n";
-      echo "State = ".$state."\n";*/
+      echo "State = ".$state."\n";
     }
     fclose($handle);
   }
