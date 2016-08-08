@@ -19,7 +19,7 @@ function handle_file($path, $id) {
     $line = fgets($handle, 255);
     if (strcmp($line, "d") == 0) {
       return;
-    } else if (strcmp($line, "e") == 0) {
+    } else if (strcmp($line, "e\n") == 0) {
       echo "conparaison avec E";
       exec("vzctl stop ".$id);
       return;
