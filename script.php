@@ -21,6 +21,7 @@ function handle_file($path, $id) {
     if (strcmp($line, "d") == 0) {
       return;
     } else if (strcmp($line, "e") == 0) {
+      echo "conparaison avec E";
       exec("vzctl stop ".$id);
       return;
     } else if (strcmp($line, "x") == 0) {
