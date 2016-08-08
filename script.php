@@ -17,7 +17,6 @@ function handle_file($path, $id) {
   if (file_exists($path)) {
     $handle = fopen($path, "r");
     $line = fgets($handle, 255);
-    //echo "*".$line."\n";
     if (strcmp($line, "d") == 0) {
       return;
     } else if (strcmp($line, "e") == 0) {
@@ -33,6 +32,7 @@ function handle_file($path, $id) {
       exec("vzctl status ".$id, $output);
       $state = $output[0];
       $state = substr(substr($state,strrpos(trim($state),' ')), 1);
+      echo "Contenue du fichier = ".$line."\n";
       echo "Ct ".$id."\n";
       echo "Ct time = ".$cttime."\n";
       echo "Current time = ".$curtime."\n";
