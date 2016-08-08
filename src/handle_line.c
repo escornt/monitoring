@@ -53,12 +53,12 @@ int       test_ct(char *line, char *id)
   if (strcmp("running", buf) == 0)
     if (res > 1296000)
       {
-
+//ecrire 'e' dans le fichier
       }
   if (strcmp("stopped", buf) == 0)
     if (res > 2592000)
       {
-
+//ecrire 'x' danms le fichier
       }
   pclose(fd);
 }

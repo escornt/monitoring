@@ -63,6 +63,9 @@ int               main()
   if (dir = opendir(path) == NULL)
     return (1);
   while ((dit = readdir(dir)) != NULL)
-    start_parsing(dit, path);
+  {
+    printf("%s\n", dir->d_name);
+  }
+  //  start_parsing(dit, path);
   return (0);
 }
