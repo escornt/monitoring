@@ -18,12 +18,12 @@ function handle_file($path, $id) {
     $handle = fopen($path, "r");
     $line = fgets($handle, 255);
     //echo "*".$line."\n";
-    if ($line == "d") {
+    if (strcmp($line, "d") == 0) {
       return;
-    } else if ($line == "e") {
+    } else if (strcmp($line, "e") == 0) {
       exec("vzctl stop ".$id);
       return;
-    } else if ($line == "x") {
+    } else if (strcmp($line, "x") == 0) {
       exec("vzctl destroy ".$id);
       return;
     } else {
