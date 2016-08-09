@@ -75,7 +75,7 @@ function sendmail($id) {
 
   $header = "From: \"ct-noreply\"<ct-noreply@1001pneus.fr>".$passage_ligne;
   $header .= "Reply-to: \"ct-noreply\" <ct-noreply@1001pneus.fr>".$passage_ligne;
-  $header .= "Content-Type: text/plain; chraset=\"utf-8\"".$passage_ligne;
+  $header .= "Content-Type: text/plain; charset=\"utf-8\"".$passage_ligne;
   $header .= "MIME-Version: 1.0".$passage_ligne;
   $header .= "Delivered-to: ".$destination.$passage_ligne;
 
