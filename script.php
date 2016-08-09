@@ -50,15 +50,18 @@ function handle_file($path, $id) {
       } else if (strcmp($state, "down") == 0) {
         if ($dif > $DEST_TIME) {
           sendmail($id);
-          exec("echo e > ".$path);
+          exec("echo x > ".$path);
         }
       }
+
       /* AFFICHAGE DES VARIABLES*/
-      echo "Contenue du fichier = ".$line."\n";
+      /*
+      echo "Contenue du fichier = ".$line;
       echo "Ct ".$id."\n";
       echo "Ct time = ".$cttime."\n";
       echo "Current time = ".$curtime."\n";
-      echo "State = ".$state."\n";
+      echo "State = ".$state."\n\n";
+      */
     }
     fclose($handle);
   }
