@@ -49,6 +49,7 @@ function handle_file($path, $id) {
         }
       } else if (strcmp($state, "down") == 0) {
         if ($dif > $DEST_TIME) {
+          sendmail($id);
           exec("echo e > ".$path);
         }
       }
@@ -61,6 +62,27 @@ function handle_file($path, $id) {
     }
     fclose($handle);
   }
+}
+
+function sendmail($id) {
+  $destination = "it@1001pneus.fr";
+  $sujet = "Warning, la CT ".$id." sera détruite dans 24h";
+
+  if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) {
+	   $passage_ligne = "\r\n";
+  } else {
+	   $passage_ligne = "\n";
+  }
+
+  $header = "From: \"ct-noreply\"<ct-noreply@1001pneus.fr>".$passage_ligne;
+  $header .= "Reply-to: \"ct-noreply\" <ct-noreply@1001pneus.fr>".$passage_ligne;
+  $header .= "MIME-Version: 1.0".$passage_ligne;
+  $header .= "Delivered-to: ".$destination.$passage_ligne;
+
+  $message = "La ct ".$id." est inactive et éteinte depuis trop longtemps, pour empécher cela allumez la ct est connectez vous dessus puis tapez \"ls\".".$passage_ligne;
+  $message .= "Afin de ne pas surcharger le serveur, les ct restant inactives trop longtemps seront supprimées.".$passage_ligne;
+
+  mail($destination,$sujet,$message,$header);
 }
 
 ?>
