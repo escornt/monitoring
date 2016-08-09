@@ -68,7 +68,7 @@ function handle_file($path, $id) {
 }
 
 function sendmail($id) {
-  $destination = "it@1001pneus.fr";
+  $destination = "test@1001pneus.fr";
   $sujet = "Warning, la CT ".$id." sera détruite dans 24h";
 
 	$passage_ligne = "\r\n";
