@@ -79,7 +79,8 @@ function sendmail($id) {
   $header .= "MIME-Version: 1.0".$passage_ligne;
   $header .= "Delivered-to: ".$destination.$passage_ligne;
 
-  $message = "La ct ".$id." est inactive et éteinte depuis trop longtemps, pour empécher cela allumez la ct est connectez vous dessus puis tapez \"ls\".".$passage_ligne;
+  $message = "La ct ".$id." est inactive et éteinte depuis trop longtemps.".$passage_ligne;
+  $message .= "Pour empécher cela allumez la ct et connectez vous dessus puis tapez \"ls\".".$passage_ligne;
   $message .= "Afin de ne pas surcharger le serveur, les ct restant inactives trop longtemps seront supprimées.".$passage_ligne;
 
   mail($destination,$sujet,$message,$header);
