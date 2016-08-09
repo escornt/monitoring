@@ -68,11 +68,7 @@ function sendmail($id) {
   $destination = "it@1001pneus.fr";
   $sujet = "Warning, la CT ".$id." sera détruite dans 24h";
 
-  if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) {
-	   $passage_ligne = "\r\n";
-  } else {
-	   $passage_ligne = "\n";
-  }
+	$passage_ligne = "\r\n";
 
   $header = "From: \"ct-noreply\"<ct-noreply@1001pneus.fr>".$passage_ligne;
   $header .= "Reply-to: \"ct-noreply\" <ct-noreply@1001pneus.fr>".$passage_ligne;
